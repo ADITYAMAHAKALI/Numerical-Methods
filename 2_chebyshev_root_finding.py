@@ -12,7 +12,7 @@ def fdfunc(x):
 
 # second derivative f''x()
 def ddfunc(x):
-    return 6*x - 6 
+    return 20*x**3 - 6*x - 6  
 
 def chebyshev():
     x = rand.randint(-20,20) 
