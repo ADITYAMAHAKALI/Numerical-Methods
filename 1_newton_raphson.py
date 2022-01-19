@@ -1,15 +1,13 @@
 import math
 #function definition
-# e.g. f(x) = sin(x)
 def func(x):
     return x**2 - 2*x +1
-#e.g. f'(x) = cos(x)
 def dfunc(x):
     return 2 * x - 2 
 
 def newton_raphson():
     x = 10
-    epsilon = 1e-6
+    epsilon = 1e-3
     h = (func(x)/dfunc(x))
     print(x,func(x),dfunc(x),h)
     while(abs(h)>epsilon):
@@ -26,3 +24,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+b           
