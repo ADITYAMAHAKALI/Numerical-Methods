@@ -1,5 +1,5 @@
 import math
-from operator import ne
+
 #function definition
 def func(x):
     return  x**4 - x -10
