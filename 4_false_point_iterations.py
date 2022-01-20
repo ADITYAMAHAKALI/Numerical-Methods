@@ -62,7 +62,7 @@ def find_root_false_position_with_iterations(x0,x1,iteration):
 
 def printTable(X,Y):
     l = len(X)
-    print("Value Table Baesd on function: ")
+    print("Value Table Based on function: ")
     print("X","\t","Y")
     for i in range(l):
         print(X[i],"\t",Y[i])

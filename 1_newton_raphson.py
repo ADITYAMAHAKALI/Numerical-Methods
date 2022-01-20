@@ -1,9 +1,9 @@
 import math
 #function definition
 def func(x):
-    return x**2 - 2*x +1
+    return x**4 - x - 10
 def dfunc(x):
-    return 2 * x - 2 
+    return 4* x**3 - 1 
 
 def newton_raphson():
     x = 10
