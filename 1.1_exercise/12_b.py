@@ -10,11 +10,11 @@ def dfunc(x):
     return 2*x
 
 def newton_raphson():
-    x = 1.9
+    x = 12
     print(x)
     epsilon = 1e-3
     h = (func(x)/dfunc(x))
-    print(x,func(x),dfunc(x),h)
+    print(round(x,p),round(func(x),p),round(dfunc(x),p),round(h,p))
     while(abs(h)>epsilon):
         h = (func(x)/dfunc(x))
         x = x-h
