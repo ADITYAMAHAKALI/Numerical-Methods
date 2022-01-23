@@ -153,9 +153,7 @@ def find_solution(A,B):
             
         elif rankA < rankAB:
             print("No solution exist rank A < rank Augmented matrix")
-    # print(rank_Augmented)
-    # if rank == n we will have unique solution
-    # elif rank < n        
+         
     return solution
 
 def main():
