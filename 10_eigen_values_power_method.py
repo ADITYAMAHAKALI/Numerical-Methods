@@ -1,8 +1,4 @@
 import numpy as np
-import math 
-import random
-
-from soupsieve import match
 
 def matrix_input(filename):
     file = open(filename,'r')
