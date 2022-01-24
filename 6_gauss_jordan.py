@@ -31,6 +31,7 @@ def to_reduced_row_echleon(X,m,n):
                 max_row_index = row
         print(f"R{iteration} <--> R{max_row_index}")
         X[[iteration,max_row_index]] = X[[max_row_index,iteration]]
+        
         if(X[iteration,iteration] != 0):
             print(f"R{iteration} -> R{iteration} / {X[iteration,iteration]}")
             X[iteration] = X[iteration] / X[iteration,iteration]
@@ -45,10 +46,6 @@ def to_reduced_row_echleon(X,m,n):
         print("\n!------------------------------------------------------!\n")
     return X
             
-        
-        
-    
-  
 def nullity(A):
     iteration = (A.shape)[1] -1
     row = (A.shape)[0] -1
@@ -79,7 +76,7 @@ def find_solution(A,B):
     # print(n)
     rankA = variables - nullityA 
     nullityB = checkB(B)
-    rankAB = max(nullityA,variables - nullityB)
+    rankAB = max(rankA,variables - nullityB)
     # homogeneous case
     if(nullityB == variables):
         # we wil get trivial solution i.e. value of all variables is zero 

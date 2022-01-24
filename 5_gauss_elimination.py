@@ -79,7 +79,7 @@ def find_solution(A,B):
     # print(n)
     rankA = variables - nullityA 
     nullityB = checkB(B)
-    rankAB = max(nullityA,variables - nullityB)
+    rankAB = max(rankA,variables - nullityB)
     # homogeneous case
     if(nullityB == variables):
         # we wil get trivial solution i.e. value of all variables is zero 
