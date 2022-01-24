@@ -1,7 +1,7 @@
 import math
 import random  
 #function definition
-p =4
+p =6
 
 def func(x):
     return x * math.exp(x) -3 
@@ -10,7 +10,7 @@ def dfunc(x):
     return (1 + x)  *  math.exp(x)
 
 def newton_raphson():
-    x = random.randrange(-1,1)
+    x = 1
     print(x)
     epsilon = 1e-4
     h = (func(x)/dfunc(x))
@@ -20,7 +20,7 @@ def newton_raphson():
         x = x-h
         print(round(x,p),round(func(x),p),round(dfunc(x),p),round(h,p))
     
-    print(round(x,3))
+    print(round(x,p))
 
     
 def main():

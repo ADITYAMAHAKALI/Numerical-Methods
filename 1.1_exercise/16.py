@@ -59,7 +59,7 @@ def general_iteration(x,p):
         h = abs(x-prev_x)
         print(f"in this step |{round(prev_x,p)} -{round(x,p)}| = {round(h,p)},")
         print()
-        if(h<1e-9):
+        if(h<1e-4):
             return x
         
 def main():

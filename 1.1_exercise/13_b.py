@@ -1,7 +1,7 @@
 import math
 import random  
 #function definition
-p =3
+p =5
 
 def func(x):
     return x-1/26
@@ -10,9 +10,9 @@ def dfunc(x):
     return 1
 
 def newton_raphson():
-    x = 1.9
+    x = 4
     print(x)
-    epsilon = 1e-3
+    epsilon = 5e-4
     h = (func(x)/dfunc(x))
     print(x,func(x),dfunc(x),h)
     while(abs(h)>epsilon):

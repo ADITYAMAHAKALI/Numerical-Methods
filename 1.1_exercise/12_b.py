@@ -10,7 +10,7 @@ def dfunc(x):
     return 2*x
 
 def newton_raphson():
-    x = 12
+    x = 10
     print(x)
     epsilon = 1e-3
     h = (func(x)/dfunc(x))
