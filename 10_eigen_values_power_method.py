@@ -33,7 +33,20 @@ def find_approx_eigen_values(A,solution_vector,n):
         
         if(abs(eigen_value-prev_eigen_value)<epsilon):
             print(f"|{eigen_value} - {prev_eigen_value} < {epsilon}")
-            return eigen_value
+            return eigen_value,solution_vector
+
+def determineSign(A,eigen_value):
+    dim  = A.shape
+    I = np.identity(dim[0])
+    I*=eigen_value
+    magnitude = np.linalg.det(A-I)
+    #print(magnitude)
+    if(abs(magnitude) < 1):
+        print(f"|A- lambda * I| is close to zero so eigenvalue is positive ")
+        return '+'
+    else:
+        print(f"|A- lambda * I| is not close to zero so eigenvalue is negative ")
+        return '-'
         
 def main():
     mat = matrix_input('matrix.txt')
@@ -49,8 +62,12 @@ def main():
     if(m!=n-1):
         print("Change the matrix, only square matrix have eigen values")
     
-    find_approx_eigen_values(A,B,n)
-
+    eigen_value,eigen_vector = find_approx_eigen_values(A,B,n)
+    print("\n\nLargest Eigen value: ",eigen_value)
+    print("\nCorresponding Eigen vector: \n",eigen_vector)
+    #--------To obtain the sign of eigen value
+    sign = determineSign(A,eigen_value)
+    print("\nSign of eigen value is: ",sign)
 
 if __name__ == '__main__':
     main()
