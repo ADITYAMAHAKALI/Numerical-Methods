@@ -28,8 +28,6 @@ def checkDifference(A,B,epsilon):
     
     return True
         
-        
-
 def gauss_jacobi(A,B,solution):
     epsilon = 5e-3
     print(epsilon)
@@ -55,6 +53,7 @@ def gauss_jacobi(A,B,solution):
         if( checkDifference(prev_solution,solution,epsilon)):
             return solution 
     return solution
+
 def main():
     mat = matrix_input('matrix.txt')
     print("\n\nAugmented Matrix [A:B]\n",mat)

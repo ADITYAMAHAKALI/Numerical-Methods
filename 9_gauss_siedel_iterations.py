@@ -59,6 +59,7 @@ def gauss_jacobi(A,B,solution):
         if(flag):
             return solution 
     return solution
+
 def main():
     mat = matrix_input('matrix.txt')
     print("\n\nAugmented Matrix [A:B]\n",mat)

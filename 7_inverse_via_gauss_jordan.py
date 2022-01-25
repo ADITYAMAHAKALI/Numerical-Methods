@@ -45,7 +45,6 @@ def to_reduced_row_echleon(X,m,n):
         print("\n!------------------------------------------------------!\n")
     return X
 
-
 def find_inverse(X,n):
     I = np.identity(n)
     print(I)
@@ -80,9 +79,6 @@ def find_inverse(X,n):
     print(A)
     return np.hsplit(A,[n,2*n])[1]
         
-        
-    
-  
 def nullity(A):
     iteration = (A.shape)[1] -1
     row = (A.shape)[0] -1
@@ -105,8 +101,6 @@ def checkB(B):
             return n 
     return n
         
-
-
 def main():
     mat = matrix_input('matrix.txt')
     m,n = mat.shape

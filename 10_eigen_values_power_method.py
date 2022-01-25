@@ -14,8 +14,6 @@ def matrix_input(filename):
     file.close()
     return np.array(mat,dtype=np.float32)
 
-
-
 def find_approx_eigen_values(A,solution_vector,n):
     epsilon = 5e-4
     eigen_value = solution_vector[1,0]

@@ -1,3 +1,141 @@
 25 1 2 1
 1 3 0 1
 2 0 -4 1
+
+Augmented Matrix [A:B]
+ [[25.  1.  2.  1.]
+ [ 1.  3.  0.  1.]
+ [ 2.  0. -4.  1.]]
+A:
+ [[25.  1.  2.]
+ [ 1.  3.  0.]
+ [ 2.  0. -4.]]
+B:
+ [[1.]
+ [1.]
+ [1.]]
+Dimensison:  3 4
+
+for iteration no: 0
+
+taking product of 
+[[25.  1.  2.]
+ [ 1.  3.  0.]
+ [ 2.  0. -4.]] and 
+[[1.]
+ [1.]
+ [1.]]
+
+New Solution_vector:
+ [[28.]
+ [ 4.]
+ [-2.]]
+Eigen_value:  28.0
+
+for iteration no: 1
+
+taking product of 
+[[25.  1.  2.]
+ [ 1.  3.  0.]
+ [ 2.  0. -4.]] and 
+[[ 1.        ]
+ [ 0.14285715]
+ [-0.07142857]]
+
+New Solution_vector:
+ [[25.       ]
+ [ 1.4285715]
+ [ 2.2857144]]
+Eigen_value:  25.0
+
+for iteration no: 2
+
+taking product of 
+[[25.  1.  2.]
+ [ 1.  3.  0.]
+ [ 2.  0. -4.]] and 
+[[1.        ]
+ [0.05714286]
+ [0.09142858]]
+
+New Solution_vector:
+ [[25.24     ]
+ [ 1.1714286]
+ [ 1.6342857]]
+Eigen_value:  25.24
+
+for iteration no: 3
+
+taking product of 
+[[25.  1.  2.]
+ [ 1.  3.  0.]
+ [ 2.  0. -4.]] and 
+[[1.        ]
+ [0.04641159]
+ [0.06474983]]
+
+New Solution_vector:
+ [[25.17591  ]
+ [ 1.1392348]
+ [ 1.7410007]]
+Eigen_value:  25.17591
+
+for iteration no: 4
+
+taking product of 
+[[25.  1.  2.]
+ [ 1.  3.  0.]
+ [ 2.  0. -4.]] and 
+[[1.        ]
+ [0.04525099]
+ [0.06915344]]
+
+New Solution_vector:
+ [[25.18356  ]
+ [ 1.1357529]
+ [ 1.7233863]]
+Eigen_value:  25.18356
+
+for iteration no: 5
+
+taking product of 
+[[25.  1.  2.]
+ [ 1.  3.  0.]
+ [ 2.  0. -4.]] and 
+[[1.        ]
+ [0.04509898]
+ [0.06843299]]
+
+New Solution_vector:
+ [[25.181965]
+ [ 1.135297]
+ [ 1.726268]]
+Eigen_value:  25.181965
+
+for iteration no: 6
+
+taking product of 
+[[25.  1.  2.]
+ [ 1.  3.  0.]
+ [ 2.  0. -4.]] and 
+[[1.        ]
+ [0.04508373]
+ [0.06855176]]
+
+New Solution_vector:
+ [[25.182188 ]
+ [ 1.1352512]
+ [ 1.7257929]]
+Eigen_value:  25.182188
+|25.182188034057617 - 25.181964874267578 < 0.0005
+
+
+Largest Eigen value:  25.182188
+
+Corresponding Eigen vector: 
+ [[1.        ]
+ [0.04508151]
+ [0.06853229]]
+|A- lambda * I| is close to zero so eigenvalue is positive 
+
+Sign of eigen value is:  +
