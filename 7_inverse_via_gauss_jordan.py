@@ -47,7 +47,7 @@ def to_reduced_row_echleon(X,m,n):
 
 def find_inverse(X,n):
     I = np.identity(n)
-    print(I)
+    #print(I)
     A = np.hstack((X,I))           
     # A is our augmented matrix
     # parial pivoting
@@ -104,6 +104,7 @@ def checkB(B):
 def main():
     mat = matrix_input('matrix.txt')
     m,n = mat.shape
+    print(mat)
     print("Dimensison: ",m,n)
     if(m!=n):
         print("Inverse of non-square matrix is not possible")

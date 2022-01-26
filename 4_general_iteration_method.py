@@ -67,7 +67,7 @@ def main():
     Y=[]
     # --------------2. To change for each question(maybe) ------------- 
     p = 6 # precision
-    X,Y = build_table(-10,10,1)
+    X,Y = build_table(0,10,1)
     printTable(X,Y)
     # determining best x0,x1
     x0,x1 = find_most_appropriate_points(X,Y)

@@ -30,8 +30,9 @@ def to_echleon(X,m,n):
                 #print("m:", max_start_row)
                 max_start_row = abs(X[row,iteration])
                 max_row_index = row
-        print(f"R{iteration} <--> R{max_row_index}")
-        X[[iteration,max_row_index]] = X[[max_row_index,iteration]]
+        if(iteration != max_row_index):
+            print(f"R{iteration} <--> R{max_row_index}")
+            X[[iteration,max_row_index]] = X[[max_row_index,iteration]]
         #print("max_pivot form:\n",X)
         # now we will zero the elements below our pivot
         if(X[iteration,iteration] != 0):
@@ -40,7 +41,7 @@ def to_echleon(X,m,n):
                 if(X[i,iteration]==0):
                     continue
                 else:
-                    print(f"R{i} ---> R{i} + ({X[i,iteration]}) * (R{iteration} / {(X[iteration,iteration])})")
+                    print(f"R{i} ---> R{i} - ({X[i,iteration]}) * (R{iteration} / {(X[iteration,iteration])})")
                     X[i] = X[i] - X[i,iteration]*(X[iteration] / (X[iteration,iteration]))
         print("X:\n",X)
         print("\n!------------------------------------------------------!\n")
@@ -164,11 +165,13 @@ def main():
     print("Dimensison: ",m,n)
     print("solution:\n!------------------------------------------------------!\n")
     X = to_echleon(mat,m,n)
+    X = np.round(X,3)
     # X is an upper triangular augmented matrix 
     # A is from col 0,m-1;  B is last column 
     C = np.hsplit(X,[n-1,n])
     A = C[0]
     B = C[1]
+    #A = np.round(A,3)
     print("A:\n",A)
     print("B:\n",B)
     # total variables in solution = n-1 

@@ -104,6 +104,7 @@ def find_solution(A,B):
     # elif rank < n        
     return solution
 
+
 def main():
     mat = matrix_input('matrix.txt')
     print("\n\nAugmented Matrix [A:B]\n",mat)
@@ -114,6 +115,8 @@ def main():
     X = to_reduced_row_echleon(mat,m,n)
     # X is an upper triangular augmented matrix 
     # A is from col 0,m-1;  B is last column 
+    X= np.round(X,4)
+    print(X)
     C = np.hsplit(X,[n-1,n])
     A = C[0]
     B = C[1]

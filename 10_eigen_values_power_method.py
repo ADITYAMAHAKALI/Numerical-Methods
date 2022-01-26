@@ -18,7 +18,7 @@ def find_approx_eigen_values(A,solution_vector,n):
     epsilon = 5e-4
     eigen_value = solution_vector[1,0]
     iteration = 0
-    while iteration<10:
+    while iteration<20:
         print(f"\nfor iteration no: {iteration}\n")
         iteration+=1
         prev_eigen_value = np.copy(eigen_value)
@@ -62,7 +62,7 @@ def main():
     
     eigen_value,eigen_vector = find_approx_eigen_values(A,B,n)
     print("\n\nLargest Eigen value: ",eigen_value)
-    print("\nCorresponding Eigen vector: \n",eigen_vector)
+    print("\nCorresponding Eigen vector: \n",np.round(eigen_vector,5))
     #--------To obtain the sign of eigen value
     sign = determineSign(A,eigen_value)
     print("\nSign of eigen value is: ",sign)

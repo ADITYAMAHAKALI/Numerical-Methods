@@ -54,11 +54,32 @@ def gauss_jacobi(A,B,solution):
             return solution 
     return solution
 
+def DiagonallyDominant(A):
+    [rows,cols] = A.shape
+    for iteration in range(rows):
+        print(iteration)
+        max_pivot = -1e9
+        max_row_index=0
+        for row in range(iteration,rows):
+            if(abs(A[row,iteration])> max_pivot):
+                #print("m:", max_start_row)
+                max_pivot = abs(A[row,iteration])
+                max_row_index = row
+        if(iteration != max_row_index):
+            print(f"R{iteration} <--> R{max_row_index}")
+            A[[iteration,max_row_index]] = A[[max_row_index,iteration]]
+        
+        print(A)
+    return A
+            
+        
+    
 def main():
     mat = matrix_input('matrix.txt')
     print("\n\nAugmented Matrix [A:B]\n",mat)
     #initialisng dimension of the matrix
     m,n = mat.shape
+    mat = DiagonallyDominant(mat)
     print("Dimensison: ",m,n)
     C = np.hsplit(mat,[n-1,n])
     A = C[0]
