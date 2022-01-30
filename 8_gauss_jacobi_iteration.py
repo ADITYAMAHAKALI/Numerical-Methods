@@ -49,7 +49,8 @@ def gauss_jacobi(A,B,solution):
                 solution[row,0]-=  A[row,col] * prev_solution[col,0]
             solution[row,0] = solution[row,0] / A[row,row]
             print()
-        print(f"x{row}  =  {solution[row,0]}")
+        #print(f"x{row}  =  {solution[row,0]}")
+        print(np.reshape(solution,[1,rows]))
         if( checkDifference(prev_solution,solution,epsilon)):
             return solution 
     return solution
@@ -57,7 +58,7 @@ def gauss_jacobi(A,B,solution):
 def DiagonallyDominant(A):
     [rows,cols] = A.shape
     for iteration in range(rows):
-        print(iteration)
+        #print(iteration)
         max_pivot = -1e9
         max_row_index=0
         for row in range(iteration,rows):
@@ -66,10 +67,10 @@ def DiagonallyDominant(A):
                 max_pivot = abs(A[row,iteration])
                 max_row_index = row
         if(iteration != max_row_index):
-            print(f"R{iteration} <--> R{max_row_index}")
+            #print(f"R{iteration} <--> R{max_row_index}")
             A[[iteration,max_row_index]] = A[[max_row_index,iteration]]
         
-        print(A)
+        #print(A)
     return A
             
         
@@ -80,14 +81,14 @@ def main():
     #initialisng dimension of the matrix
     m,n = mat.shape
     mat = DiagonallyDominant(mat)
-    print("Dimensison: ",m,n)
+    print("Diagonally Dominant Matrix: \n",mat)
     C = np.hsplit(mat,[n-1,n])
     A = C[0]
     B = C[1]
     print("A:\n",A)
     print("B:\n",B)
     solution = np.zeros([n-1,1],dtype=np.float32)
-    solution  = np.reshape(solution,[n-1,1])
+    print("Initial Solution Vector")
     print(solution)
     print("\nsolution:\n!------------------------------------------------------!\n")
     solution = gauss_jacobi(A,B,solution)

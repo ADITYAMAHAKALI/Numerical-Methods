@@ -48,7 +48,9 @@ def to_reduced_row_echleon(X,m,n):
 def find_inverse(X,n):
     I = np.identity(n)
     #print(I)
-    A = np.hstack((X,I))           
+    A = np.hstack((X,I)) 
+    print("Augmented Matrix [A:I]") 
+    print(A)         
     # A is our augmented matrix
     # parial pivoting
     for iteration in range(n):

@@ -32,7 +32,7 @@ def checkDifference(A,B,epsilon):
     return True
 
 def gauss_siedel(A,B,solution):
-    epsilon = 5e-6
+    epsilon = 5e-3
     print(epsilon)
     rows = (A.shape)[0] 
     cols = (A.shape)[1]
@@ -55,7 +55,7 @@ def gauss_siedel(A,B,solution):
                     print(f"x{row}-=  {A[row,col]} * {solution[col,0]} #x(k+1)")
                     solution[row,0]-=  A[row,col] * solution[col,0]
             solution[row,0] = solution[row,0] / A[row,row]
-            print(solution)
+            #print(solution)
         flag= checkDifference(prev_solution,solution,epsilon)
         if(flag):
             return solution 
@@ -63,7 +63,7 @@ def gauss_siedel(A,B,solution):
 def DiagonallyDominant(A):
     [rows,cols] = A.shape
     for iteration in range(rows):
-        print(iteration)
+        #print(iteration)
         max_pivot = -1e9
         max_row_index=0
         for row in range(iteration,rows):
@@ -72,10 +72,10 @@ def DiagonallyDominant(A):
                 max_pivot = abs(A[row,iteration])
                 max_row_index = row
         if(iteration != max_row_index):
-            print(f"R{iteration} <--> R{max_row_index}")
+            #print(f"R{iteration} <--> R{max_row_index}")
             A[[iteration,max_row_index]] = A[[max_row_index,iteration]]
         
-        print(A)
+        #print(A)
     return A
 
 def main():
@@ -83,8 +83,8 @@ def main():
     print("\n\nAugmented Matrix [A:B]\n",mat)
     #initialisng dimension of the matrix
     m,n = mat.shape
-    print("Dimensison: ",m,n) 
     mat=DiagonallyDominant(mat)
+    print("Diagonally Dominant Matrix: \n",mat)
     C = np.hsplit(mat,[n-1,n])
     A = C[0]
     B = C[1]
