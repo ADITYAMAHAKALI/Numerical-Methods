@@ -17,7 +17,7 @@ def points_input(filename):
     A = np.hsplit(A,[1,2])
     return A[0],A[1],n
 
-def IntegrateTrapezium(a,b,n):
+def IntegrateTrapeziumWithFunction(a,b,n):
     h= (b-a)/n 
     sum = func(a)
     for i in range(0,n-1):
@@ -46,6 +46,6 @@ if __name__ == '__main__':
     # a = 1
     # b = 2
     # for n in N:
-    #     print(f"For n={n} integrat a-> f(x) is {IntegrateTrapezium(a,b,n)}")
+    #     print(f"For n={n} integrat a-> f(x) is {IntegrateTrapeziumWithFunction(a,b,n)}")
     X,Y,n = points_input("in.txt")
     print(f"For n={n} integrat a-> f(x) is {IntegrateTrapeziumFromTable(X,Y,n)}")
