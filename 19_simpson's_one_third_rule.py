@@ -49,7 +49,7 @@ def byFunctionDriver():
 def byTableSimpsoneOneThirdRule():
     X,Y,n = points_input("in.txt")
     h = X[1] - X[0]
-    print(h)
+    print("h: ",h)
     integral = Y[0] + Y[n-1]
     for i in range(1,n-1):
         if(i%2 ==1): # x1,x3,x5...

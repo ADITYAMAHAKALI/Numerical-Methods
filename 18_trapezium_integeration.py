@@ -42,10 +42,10 @@ def IntegrateTrapeziumFromTable(X,Y,n):
 
 
 if __name__ == '__main__':
-    # N=[4,8]
-    # a = 1
-    # b = 2
-    # for n in N:
-    #     print(f"For n={n} integrat a-> f(x) is {IntegrateTrapeziumWithFunction(a,b,n)}")
-    X,Y,n = points_input("in.txt")
-    print(f"For n={n} integrat a-> f(x) is {IntegrateTrapeziumFromTable(X,Y,n)}")
+    N=[4,8]
+    a = 1
+    b = 2
+    for n in N:
+        print(f"For n={n} integral {a}->{b} f(x) is {IntegrateTrapeziumWithFunction(a,b,n)}")
+    # X,Y,n = points_input("in.txt")
+    # print(f"For n={n} integral f(x) is {IntegrateTrapeziumFromTable(X,Y,n)}")
